@@ -15,11 +15,11 @@ struct StructPtr {
 };
 
 int ReadStrFromFileToBuf(StructPtr *struc_p);
-int CountNumberStringsInBuf(StructPtr *struc_p) ;
+int CountNumberStringsInBuf(StructPtr * const struc_p) ;
 int ConvertBufToPtrArray(StructPtr *struc_p);
-int WriteStrFile(StructPtr *struc_p); //const
+int WriteStrFile(const StructPtr * const struc_p); //const
 void CleanStructPtr(StructPtr *struc_p);
 void WriteOneStrFile(const char *str, FILE *stream);
-int WriteStrucStrFile(struct string *struc_ptr, size_t num_elem, const char *filename);
+int WriteStrucStrFile(const struct string * const struc_ptr, const size_t num_elem, const char *filename);
 
 #endif // ONEGREAD_H_INCLUDED

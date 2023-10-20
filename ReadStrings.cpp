@@ -34,7 +34,7 @@ int ReadStrFromFileToBuf(StructPtr *struc_p) {
     return 0;
 }
 
-int CountNumberStringsInBuf(StructPtr *struc_p) {
+int CountNumberStringsInBuf(StructPtr *const struc_p) {
     int result = 0;
 
     for (int i = 0; i < struc_p->num_elem; i++) {
@@ -71,7 +71,7 @@ int ConvertBufToPtrArray(StructPtr *struc_p) {
     return 0;
 }
 
-int WriteStrFile(StructPtr *struc_p) {
+int WriteStrFile(const StructPtr * const struc_p) {
     printf("The file output process has started...\n");
 
     if (struc_p->name_file_output == NULL) {
@@ -92,7 +92,7 @@ int WriteStrFile(StructPtr *struc_p) {
     return 0;
 }
 
-int WriteStrucStrFile(struct string *struc_ptr, size_t num_elem, const char *filename) {
+int WriteStrucStrFile(const struct string * const struc_ptr, const size_t num_elem, const char *filename) {
     if (filename == NULL){
         printf("filename == NULL\n");
         return -1;

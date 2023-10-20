@@ -1,6 +1,6 @@
 #include "StructStrQsort.h"
 
-int ConvertStrPointerToStrStruct(char * *pointer, struct string * *struc_ptr, const size_t num_str) {
+int ConvertStrPointerToStrStruct(char * const * pointer, struct string * *struc_ptr, const size_t num_str) {
     *struc_ptr = (string *) calloc(num_str + 1, sizeof(string));
 
     if (*struc_ptr == nullptr) {
@@ -134,7 +134,7 @@ static void StrSwap(struct string *x, struct string *y) {
     *y = c;
 }
 
-static int str_cmp_beginning(struct string s1, struct string s2) {
+static int str_cmp_beginning(const struct string s1, const struct string s2) {
     assert(s1.str != NULL);
     assert(s2.str != NULL);
 
@@ -159,7 +159,7 @@ static int str_cmp_beginning(struct string s1, struct string s2) {
     return s1.str[i] - s2.str[j];
 }
 
-static int str_cmp_ending(struct string s1, struct string s2) {
+static int str_cmp_ending(const struct string s1, const struct string s2) {
     assert(s1.str != NULL);
     assert(s2.str != NULL);
 
